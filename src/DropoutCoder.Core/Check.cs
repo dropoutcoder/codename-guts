@@ -41,5 +41,33 @@ namespace DropoutCoder.Core {
             where T : class {
             return !IsNull<T>(value);
         }
+
+        /// <summary>
+        /// Indicates whether <paramref name="value"/> equals to <see langword="default" />.
+        /// </summary>
+        /// <typeparam name="T">The type of objects to compare.</typeparam>
+        /// <param name="value">An object to compare with <see langword="default" /></param>
+        /// <returns>true if <paramref name="value"/> is <see langword="default" />; otherwise, false.</returns>
+        public static bool IsDefault<T>(ref T value)
+            where T : struct, IEquatable<T> {
+            return value.Equals(default);
+        }
+
+        /// <summary>
+        /// Indicates whether <paramref name="value"/> equals to <see langword="default" />.
+        /// </summary>
+        /// <typeparam name="T">The type of objects to compare.</typeparam>
+        /// <param name="value">An object to compare with <see langword="default" /></param>
+        /// <returns>true if <paramref name="value"/> is <see langword="default" />; otherwise, false.</returns>
+        public static bool IsDefault<T>(ref T? value)
+            where T : struct, IEquatable<T> {
+            if (!value.HasValue) {
+                return true;
+            }
+
+            T temp = value.Value;
+
+            return IsDefault(ref temp);
+        }
     }
 }
