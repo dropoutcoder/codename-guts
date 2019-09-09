@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DropoutCoder.Core", "DropoutCoder.Core\DropoutCoder.Core.csproj", "{7E8EE584-E6FD-4C1B-9D10-9916B7F75436}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DropoutCoder.Core", "DropoutCoder.Core\DropoutCoder.Core.csproj", "{7E8EE584-E6FD-4C1B-9D10-9916B7F75436}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{CBD86EB0-4B05-4172-8FEF-46A32906C1DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8EC2D6A2-D11B-4287-BA6A-91BC569C3EFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +22,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7E8EE584-E6FD-4C1B-9D10-9916B7F75436} = {8EC2D6A2-D11B-4287-BA6A-91BC569C3EFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3832317D-FDEF-49E3-95C5-B577ACE87600}
