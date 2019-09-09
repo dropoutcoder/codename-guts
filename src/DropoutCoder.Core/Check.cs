@@ -5,7 +5,7 @@ namespace DropoutCoder.Core {
     /// <summary>
     /// Provides methods for common type and value validation
     /// </summary>
-    public abstract partial class Check {
+    public partial class Check {
         private Check() { }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -39,20 +39,8 @@ namespace DropoutCoder.Core {
         /// <typeparam name="T">The type of objects to compare.</typeparam>
         /// <param name="value">An object to compare with <see langword="null" /></param>
         /// <returns>true if <paramref name="value"/> is <see langword="null" />; otherwise, false.</returns>
-        public static bool IsNull<T>(T value)
-            where T : class {
+        public static bool IsNull<T>(T value) {
             return value == null;
-        }
-
-        /// <summary>
-        /// Indicates whether <paramref name="value"/> not equals to <see langword="null" />.
-        /// </summary>
-        /// <typeparam name="T">The type of objects to compare.</typeparam>
-        /// <param name="value">An object to compare with <see langword="null" /></param>
-        /// <returns>true if <paramref name="value"/> is not <see langword="null" />; otherwise, false.</returns>
-        public static bool IsNotNull<T>(T value)
-            where T : class {
-            return !IsNull<T>(value);
         }
 
         /// <summary>
