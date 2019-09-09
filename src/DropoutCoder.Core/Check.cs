@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace DropoutCoder.Core {
     /// <summary>
@@ -6,6 +7,21 @@ namespace DropoutCoder.Core {
     /// </summary>
     public abstract partial class Check {
         private Check() { }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override bool Equals(object obj) {
+            return base.Equals(obj);
+        }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override int GetHashCode() {
+            return base.GetHashCode();
+        }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public override string ToString() {
+            return base.ToString();
+        }
 
         /// <summary>
         /// Indicates whether <paramref name="value"/> equals to type of <typeparamref name="T"/>.
