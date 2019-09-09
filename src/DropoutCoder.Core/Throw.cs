@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using DropoutCoder.Core.Extensions;
 
 namespace DropoutCoder.Core {
     /// <summary>
