@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace DropoutCoder.Core {
     public static class TypeHelper {
@@ -21,10 +22,12 @@ namespace DropoutCoder.Core {
                 GetType<string>()
         };
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Type GetType<T>() {
             return typeof(T);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TypeInfo GetTypeInfo<T>() {
             return GetType<T>().GetTypeInfo();
         }

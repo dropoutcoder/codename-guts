@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using DropoutCoder.Core.RegularExpression;
 using DropoutCoder.Core.Resources;
@@ -10,6 +11,7 @@ namespace DropoutCoder.Core {
         /// </summary>
         /// <param name="value">String value to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullEmptyOrWhiteSpace(string value) {
             return String.IsNullOrWhiteSpace(value);
         }
@@ -20,6 +22,7 @@ namespace DropoutCoder.Core {
         /// <param name="value">String value to check against</param>
         /// <param name="length">Int value indicating lenght to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool HasLength(string value, ref int length) {
             Throw.IfNull(value, message: ExceptionMessageResources.ValueCannotBeNull);
 
@@ -31,6 +34,7 @@ namespace DropoutCoder.Core {
         /// </summary>
         /// <param name="value">String value to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool HasWhiteSpace(string value) {
             Throw.IfNull(value, message: ExceptionMessageResources.ValueCannotBeNull);
 
@@ -42,6 +46,7 @@ namespace DropoutCoder.Core {
         /// </summary>
         /// <param name="value">String value to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool HasDiacritics(string value) {
             Throw.IfNull(value, message: ExceptionMessageResources.ValueCannotBeNull);
 
@@ -56,6 +61,7 @@ namespace DropoutCoder.Core {
         /// </summary>
         /// <param name="value">String value to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEmail(string value) {
             Throw.IfNull(value, message: ExceptionMessageResources.ValueCannotBeNull);
 
@@ -68,6 +74,7 @@ namespace DropoutCoder.Core {
         /// <param name="value">String value to check against</param>
         /// <param name="pattern">String value of regular expreesion pattern to match against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsMatch(string value, string pattern) {
             Throw.IfNull(value, message: ExceptionMessageResources.ValueCannotBeNull);
             Throw.IfNull(pattern, nameof(pattern), ExceptionMessageResources.ValueCannotBeNull);

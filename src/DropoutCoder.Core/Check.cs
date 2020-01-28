@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace DropoutCoder.Core {
     /// <summary>
@@ -29,6 +30,7 @@ namespace DropoutCoder.Core {
         /// <typeparam name="T">The type of objects to compare.</typeparam>
         /// <param name="value">An object to compare with <typeparamref name="T"/></param>
         /// <returns>true if <paramref name="value"/> type if of type <typeparamref name="T"/>; otherwise, false.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Is<T>(object value) {
             return value is T;
         }
@@ -39,6 +41,7 @@ namespace DropoutCoder.Core {
         /// <typeparam name="T">The type of objects to compare.</typeparam>
         /// <param name="value">An object to compare with <see langword="null" /></param>
         /// <returns>true if <paramref name="value"/> is <see langword="null" />; otherwise, false.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNull<T>(T value) {
             return value == null;
         }
@@ -49,6 +52,7 @@ namespace DropoutCoder.Core {
         /// <typeparam name="T">The type of objects to compare.</typeparam>
         /// <param name="value">An object to compare with <see langword="default" /></param>
         /// <returns>true if <paramref name="value"/> is <see langword="default" />; otherwise, false.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsDefault<T>(ref T value)
             where T : struct, IEquatable<T> {
             return value.Equals(default);
@@ -60,6 +64,7 @@ namespace DropoutCoder.Core {
         /// <typeparam name="T">The type of objects to compare.</typeparam>
         /// <param name="value">An object to compare with <see langword="default" /></param>
         /// <returns>true if <paramref name="value"/> is <see langword="default" />; otherwise, false.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsDefault<T>(ref T? value)
             where T : struct, IEquatable<T> {
             if (!value.HasValue) {

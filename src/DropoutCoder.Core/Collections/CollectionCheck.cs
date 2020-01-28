@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace DropoutCoder.Core {
@@ -9,6 +10,7 @@ namespace DropoutCoder.Core {
         /// </summary>
         /// <param name="value">Enumerable value to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullOrEmpty<T>(ICollection<T> value) {
             return Check.IsNull(value) ? true : value.Count < 1;
         }

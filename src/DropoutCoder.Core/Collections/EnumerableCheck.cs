@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace DropoutCoder.Core {
 	public partial class Check {
@@ -8,6 +9,7 @@ namespace DropoutCoder.Core {
         /// </summary>
         /// <param name="value">Enumerable value to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullOrEmpty(IEnumerable value) {
             return Check.IsNull(value) ? true : !value.GetEnumerator().MoveNext();
         }
@@ -17,6 +19,7 @@ namespace DropoutCoder.Core {
         /// </summary>
         /// <param name="value">Enumerable value to check against</param>
         /// <returns>Returns boolean value indicates result of the check</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsNullOrEmpty<T>(IEnumerable<T> value) {
             return Check.IsNull(value) ? true : !value.GetEnumerator().MoveNext();
         }

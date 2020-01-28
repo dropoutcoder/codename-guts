@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace DropoutCoder.Core {
     /// <summary>
@@ -29,6 +30,7 @@ namespace DropoutCoder.Core {
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
         /// <exception cref="ArgumentNullException"></exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IfNull<T>(T value, string paramName = null, string message = null) {
             if (Check.IsNull(value)) {
                 throw ExceptionFactory.Create<ArgumentNullException>(new { paramName = paramName ?? nameof(value), message = message }.ToDictionary());
@@ -41,6 +43,7 @@ namespace DropoutCoder.Core {
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
         /// <exception cref="ArgumentNullException"></exception>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void IfDefault<T>(ref T value, string paramName = null, string message = null)
             where T : struct, IEquatable<T> {
             if (Check.IsDefault(ref value)) {
